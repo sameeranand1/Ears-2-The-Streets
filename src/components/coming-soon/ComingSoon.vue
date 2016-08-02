@@ -193,7 +193,7 @@
             letter-spacing .7px
 
         .Header ul li::after
-            bottom: 2px;
+            bottom: 0px;
             content '\25CF'
             color $BRAND_YELLOW
             font-size 14px
