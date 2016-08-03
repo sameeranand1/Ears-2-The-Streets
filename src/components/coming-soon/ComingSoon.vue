@@ -67,7 +67,7 @@
     body
         background url('../../assets/images/coming-soon/background.jpg')
         background-repeat no-repeat
-        background-position center
+        background-position top center
         background-size cover
         background-attachment fixed
 
