@@ -67,17 +67,18 @@
     body
         background url('../../assets/images/coming-soon/background.jpg')
         background-repeat no-repeat
-        background-position center center
+        background-position top center
         background-size cover
-        align-items center
-        display flex
-        justify-content center
 
 </style>
 
 <style lang="stylus" scoped>
 
     @require '../../stylus/common/colors.styl'
+
+    .ComingSoon
+        padding-top 50px
+        padding-bottom 50px
 
     .Header
         margin-bottom 50px
@@ -225,6 +226,10 @@
             font-size 14px
 
     @media (min-width 768px)
+
+        .ComingSoon
+            padding-top 100px
+            padding-bottom 50px
 
         .Header
             margin-bottom 65px
