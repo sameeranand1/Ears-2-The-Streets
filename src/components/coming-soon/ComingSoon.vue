@@ -35,8 +35,8 @@
 
                 <ul>
                     <li><a href="https://www.facebook.com/ears2thestreets/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com/e2thestreets"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.instagram.com/e2thestreets/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 </ul>
 
             </div>
@@ -65,19 +65,21 @@
         padding 0
 
     body
-        background url('../../assets/images/coming-soon/background.jpg')
+        background url('../../assets/images/coming-soon/background.png')
         background-repeat no-repeat
-        background-position center center
+        background-position top center
         background-size cover
-        align-items center
-        display flex
-        justify-content center
+        background-attachment fixed
 
 </style>
 
 <style lang="stylus" scoped>
 
     @require '../../stylus/common/colors.styl'
+
+    .ComingSoon
+        padding-top 50px
+        padding-bottom 50px
 
     .Header
         margin-bottom 50px
@@ -225,6 +227,10 @@
             font-size 14px
 
     @media (min-width 768px)
+
+        .ComingSoon
+            padding-top 100px
+            padding-bottom 50px
 
         .Header
             margin-bottom 65px
