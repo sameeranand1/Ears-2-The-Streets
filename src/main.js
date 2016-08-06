@@ -4,10 +4,10 @@ import Router from 'vue-router'
 import './stylus/app.styl'
 
 /** Import Views **/
-import AppView from './components/App.vue'
-import NotFoundView from './components/errors/NotFound.vue'
-import HomeView from './components/pages/Home.vue'
-import AboutView from './components/pages/About.vue'
+import AppView          from './components/App.vue'
+import NotFoundView     from './components/errors/NotFound.vue'
+import HomeView         from './components/pages/Home.vue'
+import AboutView        from './components/pages/About.vue'
 
 /**
  * Install router.
