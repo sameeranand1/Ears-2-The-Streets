@@ -4,7 +4,7 @@
 
         <div class="Container">
 
-            <input class="Search_Bar" type="text" v-model="query" @keyup="search" placeholder="search artists, mixtapes, music videos and more">
+            <input class="Input Search_Bar" type="text" v-model="query" @keyup="search" placeholder="search artists, mixtapes, music videos and more">
 
             <div class="Social">
 
@@ -169,20 +169,15 @@
         background-position: right 15px center;
         background-repeat no-repeat
         background-size: 16px auto;
-        border none
-        border-radius 4px
-        box-sizing border-box
-        color #777A80
-        font-family inherit
-        font-size 13px
-        height 44px
         padding: 0 45px 0px 16px;
         width 70%
 
     .Search .Search_Bar::placeholder
         opacity .4
+        transition opacity .3s ease
 
     .Search .Search_Bar:focus::placeholder
+        color $BRAND_BLUE
         opacity .6
 
     .Search .Search_Bar
@@ -234,6 +229,7 @@
         overflow-y auto
         position absolute
         right 0
+        z-index 1000
 
     .Search_Results_Container.expand-transition
         transition opacity .3s ease
