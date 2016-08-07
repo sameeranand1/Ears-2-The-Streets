@@ -5,7 +5,7 @@
         <div class="Container">
 
             <div class="Logo">
-                <img src="../../assets/images/logo.svg" alt="Ears 2 The Streets">
+                <a v-link="'/'"><img src="../../assets/images/logo.svg" alt="Ears 2 The Streets"</a>
             </div>
 
             <div class="Navigation--left">
