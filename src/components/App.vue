@@ -1,12 +1,26 @@
 <template>
     
-    <p>Header Component Goes Here</p>
+    <site-header></site-header>
 
     <router-view transition transition-mode="out-in"></router-view>
 
-    <p>Footer Component Goes Here</p>
+    <site-footer></site-footer>
 
 </template>
+
+<script>
+    import Header from './common/Header.vue'
+    import Footer from './common/Footer.vue'
+
+    export default 
+    {
+        components:
+        {
+            'site-header': Header,
+            'site-footer': Footer
+        }
+    }
+</script>
 
 <style>
 </style>
