@@ -5,16 +5,16 @@
         <div class="Container">
 
             <div class="Logo">
-                <a v-link="'/'"><img src="../../assets/images/logo.svg" alt="Ears 2 The Streets"</a>
+                <a v-link="{ path: '/', exact: true }"><img src="../../assets/images/logo.svg" alt="Ears 2 The Streets"></a>
             </div>
 
             <div class="Navigation--left">
 
                 <nav>
-                    <li><a v-link="'music-videos'">Music Videos</a></li>
-                    <li><a v-link="'mixtapes'">Mixtapes</a></li>
-                    <li><a v-link="'artists'">Artists</a></li>
-                    <li><a v-link="'events'">Events</a></li>
+                    <li><a v-link="{ path: '/music-videos', exact: true }">Music Videos</a></li>
+                    <li><a v-link="{ path: '/mixtapes', exact: true }">Mixtapes</a></li>
+                    <li><a v-link="{ path: '/artists', exact: true }">Artists</a></li>
+                    <li><a v-link="{ path: '/events', exact: true }">Events</a></li>
                 </nav>
 
             </div>
@@ -134,6 +134,10 @@
 
     .Site_Header .Navigation--left nav li a:hover,
     .Site_Header .Navigation--right nav li a:hover
+        border-bottom-color $BRAND_YELLOW
+        color $WHITE
+
+    .Site_Header .Navigation--left nav li a.v-link-active
         border-bottom-color $BRAND_YELLOW
         color $WHITE
 
