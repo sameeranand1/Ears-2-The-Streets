@@ -33,20 +33,10 @@
 
     </header>
 
-    <search-bar></search-bar>
-
 </template>
 
 <script>
-    import SearchBar from './Search.vue'
-
-    export default 
-    {
-        components:
-        {
-            'search-bar': SearchBar
-        }
-    }
+    export default {}
 </script>
 
 <style lang="stylus" scoped>

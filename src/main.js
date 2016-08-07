@@ -47,4 +47,4 @@ router.beforeEach(function() {
 /**
  * Start application.
  */
-router.start(AppView, '#app')
+router.start(AppView, 'div')

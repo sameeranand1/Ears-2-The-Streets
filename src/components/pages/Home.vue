@@ -3,11 +3,5 @@
 </template>
 
 <script>
-    export default
-    {
-        ready()
-        {
-            console.log('Homepage')
-        }
-    }
+    export default {}
 </script>
