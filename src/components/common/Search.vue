@@ -4,7 +4,9 @@
 
         <div class="Container">
 
-            <input class="Input Search_Bar" type="text" v-model="query" @keyup="search" placeholder="search artists, mixtapes, music videos and more">
+            <input v-bind:class="{ 'magnifer': !query }"  class="Input Search_Bar" type="text" v-model="query" @keyup="search" placeholder="search artists, mixtapes, music videos and more">
+
+            <span class="icon-x" v-show="query" v-on:click="clear"></span>
 
             <div class="Social">
 
@@ -137,6 +139,10 @@
         },
         methods: 
         {
+            clear()
+            {
+                this.query = ''
+            },
             search() 
             {
                 // TODO
@@ -148,7 +154,6 @@
 <style lang="stylus" scoped>
 
     @require '../../stylus/common/colors'
-    @require '../../stylus/common/tweaks'
 
     .Search
         background-color $BRAND_LIGHTER_BLUE
@@ -162,15 +167,16 @@
         height 100%
         justify-content center
         position relative
-        width 100%
 
     .Search .Search_Bar
+        padding: 0 45px 0px 16px;
+        width 100%
+
+    .Search .Search_Bar.magnifer
         background url('../../assets/images/search/search-icon.svg') $BRAND_LIGHT_BLUE
         background-position: right 15px center;
         background-repeat no-repeat
         background-size: 16px auto;
-        padding: 0 45px 0px 16px;
-        width 70%
 
     .Search .Search_Bar::placeholder
         opacity .4
@@ -188,40 +194,21 @@
         border none
         color $BRAND_LIGHTER_BLUE
 
-    .Search .Social
-        align-items center
-        display flex
-        height 100%
-        justify-content center
+    .Search .icon-x
+        color #747478
+        margin -8px 0 0 -30px
         position absolute
-        right 15px
-        top 0
 
-    .Search .Social ul
-        margin 0
-        padding 0
+    .Search .icon-x:hover
+        cursor pointer
 
-    .Search .Social ul li
-        display inline
-        list-style-type none
-        margin-right 20px
-
-    .Search .Social ul li:last-child
-        margin-right 0
-
-    .Search .Social ul li a
-        color #A4AAAA
-        font-size 13px
-        text-decoration none
-    
-    .Search .Social ul li a:hover
-        color $BRAND_YELLOW
+    .Search .Social
+        display none
 
     .Search_Results_Container
         background-color $WHITE
         border-bottom-left-radius 5px
         border-bottom-right-radius 5px
-        box-shadow 0px 7px 10px #888888
         left 0
         margin-left auto
         margin-right auto
@@ -229,7 +216,7 @@
         overflow-y auto
         position absolute
         right 0
-        z-index 1000
+        z-index 99
 
     .Search_Results_Container.expand-transition
         transition opacity .3s ease
@@ -276,11 +263,51 @@
         margin-right 20px
         width 48px
 
+    /** Medium Devices **/
+    /** Large Devices **/
+    /** Extra Large Devices **/
+    @media (min-width 768px)
+
+        .Search .Search_Bar
+            width 70%
+
+        .Search .Social
+            align-items center
+            display flex
+            height 100%
+            justify-content center
+            position absolute
+            right 15px
+            top 0
+
+        .Search .Social ul
+            margin 0
+            padding 0
+
+        .Search .Social ul li
+            display inline
+            list-style-type none
+            margin-right 20px
+
+        .Search .Social ul li:last-child
+            margin-right 0
+
+        .Search .Social ul li a
+            color #A4AAAA
+            font-size 13px
+            text-decoration none
+        
+        .Search .Social ul li a:hover
+            color $BRAND_YELLOW
+
+    /** Large Devices **/
     @media (min-width 992px)
 
         .Search_Results_Container
+            box-shadow 0px 7px 10px #888888
             width calc(962px * .70)
 
+    /** Extra Large Devices **/
     @media (min-width 1200px)
 
         .Search_Results_Container
