@@ -4,11 +4,7 @@
 
     <search></search>
 
-    <div class="Page">
-
-        <router-view transition transition-mode="out-in"></router-view>
-
-    </div>
+    <router-view transition transition-mode="out-in"></router-view>
 
     <newsletter></newsletter>
 
@@ -33,10 +29,3 @@
         }
     }
 </script>
-
-<style lang="stylus" scoped>
-    
-    .Page
-        padding 25px 0
-
-</style>

@@ -1,5 +1,11 @@
 <template>
-    <p>Homepage</p>
+
+    <div class="Home Page">
+
+        <p>Homepage</p>
+
+    </div>
+
 </template>
 
 <script>

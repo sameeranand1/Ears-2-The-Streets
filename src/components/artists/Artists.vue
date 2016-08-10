@@ -1,5 +1,11 @@
 <template>
-    <p>Artists Page</p>
+
+    <div class="Artists Page">
+
+        <p>Artists Page</p>
+
+    </div>
+
 </template>
 
 <script>

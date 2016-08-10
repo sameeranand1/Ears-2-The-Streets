@@ -1,5 +1,11 @@
 <template>
-    <p>Specific Event Page</p>
+
+    <div class="Event Page">
+
+        <p>Specific Event Page</p>
+
+    </div>
+
 </template>
 
 <script>

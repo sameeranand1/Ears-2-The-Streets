@@ -1,5 +1,11 @@
 <template>
-    <h2>Specific Mixtape Page</h2>
+
+    <div class="Mixtape Page">
+
+        <p>Specific Mixtape Page</p>
+
+    </div>
+
 </template>
 
 <script>
