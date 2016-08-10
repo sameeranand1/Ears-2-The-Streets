@@ -309,10 +309,8 @@
             color $BRAND_YELLOW
 
         .Search .icon-x
-            color #747478
-            position relative
-            right 30px
-            top 0px
+            right 139px
+            top 24px
 
     /** Large Devices **/
     @media (min-width 992px)
@@ -321,11 +319,17 @@
             box-shadow 0px 7px 10px #888888
             width calc(962px * .70)
 
+        .Search .icon-x
+            right 173px
+
     /** Extra Large Devices **/
     @media (min-width 1200px)
 
         .Search_Results_Container
             width calc(1170px * .70)
+
+        .Search .icon-x
+            right 204px
 
 
 </style>
