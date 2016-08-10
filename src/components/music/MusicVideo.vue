@@ -1,5 +1,11 @@
 <template>
-    <h2>Specific Music Video Page</h2>
+
+    <div class="Music_Video Page">
+
+        <p>Specific Music Video Page</p>
+
+    </div>
+
 </template>
 
 <script>

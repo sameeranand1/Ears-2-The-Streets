@@ -55,9 +55,6 @@
 
     .Newsletter
         background-color #292A30
-        bottom 462px
-        max-height 314px
-        position absolute
         width 100%
 
     .Newsletter .Container
@@ -125,7 +122,6 @@
     @media (min-width 768px)
 
         .Newsletter
-            bottom 179px
             height 170px
 
         .Newsletter .Heading,

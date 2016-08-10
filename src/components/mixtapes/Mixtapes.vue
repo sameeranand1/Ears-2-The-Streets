@@ -1,5 +1,11 @@
 <template>
-    <p>Mixtapes Page</p>
+
+    <div class="Mixtapes Page">
+
+        <p>Mixtapes Page</p>
+
+    </div>
+
 </template>
 
 <script>

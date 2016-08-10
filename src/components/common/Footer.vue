@@ -99,9 +99,7 @@
     
     .Site_Footer
         background-color $BRAND_LIGHT_BLUE
-        bottom 0
-        height 462px
-        position absolute
+        position relative
         width 100%
 
     .Site_Footer .Container
@@ -218,9 +216,7 @@
     @media (min-width 768px)
 
         .Site_Footer
-            bottom 0
             height 179px
-            position absolute
 
         .Site_Footer .Container
             align-items center
