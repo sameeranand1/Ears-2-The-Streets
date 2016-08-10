@@ -158,14 +158,12 @@
     .Search
         background-color $BRAND_LIGHTER_BLUE
         border-bottom 1px solid #0C0D16
-        height 64px
+        padding 20px 0
         width 100%
 
     .Search .Container
-        align-items center
-        display flex
+        display block
         height 100%
-        justify-content center
         position relative
 
     .Search .Search_Bar
@@ -196,8 +194,9 @@
 
     .Search .icon-x
         color #747478
-        margin -8px 0 0 -30px
         position absolute
+        right 30px
+        top 12px
 
     .Search .icon-x:hover
         cursor pointer
@@ -268,6 +267,15 @@
     /** Extra Large Devices **/
     @media (min-width 768px)
 
+        .Search
+            height 64px
+            padding 0
+
+        .Search .Container
+            align-items center
+            display flex
+            justify-content center
+
         .Search .Search_Bar
             width 70%
 
@@ -299,6 +307,12 @@
         
         .Search .Social ul li a:hover
             color $BRAND_YELLOW
+
+        .Search .icon-x
+            color #747478
+            position relative
+            right 30px
+            top 0px
 
     /** Large Devices **/
     @media (min-width 992px)
