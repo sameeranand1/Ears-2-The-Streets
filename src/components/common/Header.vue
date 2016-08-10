@@ -136,7 +136,7 @@
         padding 25px 0
         position absolute
         text-align center
-        top 85px
+        top 145px
         width 100%
         z-index 100
 
@@ -191,6 +191,9 @@
 
         .Navigation--toggle
             display none
+
+        .Navigation--mobile
+            top 85px
 
     /** Medium Devices **/
     @media (min-width 768px)
