@@ -136,6 +136,7 @@
         padding 25px 0
         position absolute
         text-align center
+        top 85px
         width 100%
         z-index 100
 
