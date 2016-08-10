@@ -20,104 +20,104 @@
 
         </div>
 
-    </div>
+        <div class="Search_Results_Container" v-show="query" transition="expand">
 
-    <div class="Search_Results_Container" v-show="query" transition="expand">
+            <div class="Category Events">
 
-        <div class="Category Events">
+                <header>
+                    <h4>Events</h4>
+                </header>
 
-            <header>
-                <h4>Events</h4>
-            </header>
+                <div class="Search_Results">
 
-            <div class="Search_Results">
+                    <div class="Search_Result">
+                        <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
+                        {{ query }}
+                    </div>
+                    <div class="Search_Result">
+                        <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
+                        {{ query }}
+                    </div>
+                    <div class="Search_Result">
+                        <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
+                        {{ query }}
+                    </div>
 
-                <div class="Search_Result">
-                    <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
-                    {{ query }}
                 </div>
-                <div class="Search_Result">
-                    <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
-                    {{ query }}
-                </div>
-                <div class="Search_Result">
-                    <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
-                    {{ query }}
-                </div>
-
-            </div>
-            
-        </div>
-
-        <div class="Category Music_Videos">
-
-            <header>
-                <h4>Music Videos</h4>
-            </header>
-
-            <div class="Search_Results">
-
-                <div class="Search_Result">
-                    <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
-                    {{ query }}
-                </div>
-                <div class="Search_Result">
-                    <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
-                    {{ query }}
-                </div>
-                <div class="Search_Result">
-                    <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
-                    {{ query }}
-                </div>
-
+                
             </div>
 
-        </div>
+            <div class="Category Music_Videos">
 
-        <div class="Category Mixtapes">
+                <header>
+                    <h4>Music Videos</h4>
+                </header>
 
-            <header>
-                <h4>Mixtapes</h4>
-            </header>
+                <div class="Search_Results">
 
-            <div class="Search_Results">
+                    <div class="Search_Result">
+                        <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
+                        {{ query }}
+                    </div>
+                    <div class="Search_Result">
+                        <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
+                        {{ query }}
+                    </div>
+                    <div class="Search_Result">
+                        <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
+                        {{ query }}
+                    </div>
 
-                <div class="Search_Result">
-                    <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
-                    {{ query }}
-                </div>
-                <div class="Search_Result">
-                    <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
-                    {{ query }}
-                </div>
-                <div class="Search_Result">
-                    <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
-                    {{ query }}
                 </div>
 
             </div>
 
-        </div>
+            <div class="Category Mixtapes">
 
-        <div class="Category Artists">
+                <header>
+                    <h4>Mixtapes</h4>
+                </header>
 
-            <header>
-                <h4>Artists</h4>
-            </header>
+                <div class="Search_Results">
 
-            <div class="Search_Results">
+                    <div class="Search_Result">
+                        <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
+                        {{ query }}
+                    </div>
+                    <div class="Search_Result">
+                        <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
+                        {{ query }}
+                    </div>
+                    <div class="Search_Result">
+                        <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
+                        {{ query }}
+                    </div>
 
-                <div class="Search_Result">
-                    <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
-                    {{ query }}
                 </div>
-                <div class="Search_Result">
-                    <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
-                    {{ query }}
-                </div>
-                <div class="Search_Result">
-                    <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
-                    {{ query }}
+
+            </div>
+
+            <div class="Category Artists">
+
+                <header>
+                    <h4>Artists</h4>
+                </header>
+
+                <div class="Search_Results">
+
+                    <div class="Search_Result">
+                        <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
+                        {{ query }}
+                    </div>
+                    <div class="Search_Result">
+                        <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
+                        {{ query }}
+                    </div>
+                    <div class="Search_Result">
+                        <img class="Search_Result_Thumbnail" src="../../assets/images/search/thumbnail.png">
+                        {{ query }}
+                    </div>
+
                 </div>
 
             </div>
@@ -158,12 +158,14 @@
     .Search
         background-color $BRAND_LIGHTER_BLUE
         border-bottom 1px solid #0C0D16
-        padding 20px 0
+        height 64px
         width 100%
 
     .Search .Container
-        display block
+        align-items center
+        display flex
         height 100%
+        justify-content center
         position relative
 
     .Search .Search_Bar
@@ -196,7 +198,7 @@
         color #747478
         position absolute
         right 30px
-        top 12px
+        top 24px
 
     .Search .icon-x:hover
         cursor pointer
@@ -211,6 +213,7 @@
         left 0
         margin-left auto
         margin-right auto
+        margin-top 1px
         max-height 350px
         overflow-y auto
         position absolute
@@ -267,10 +270,6 @@
     /** Extra Large Devices **/
     @media (min-width 768px)
 
-        .Search
-            height 64px
-            padding 0
-
         .Search .Container
             align-items center
             display flex
@@ -310,7 +309,6 @@
 
         .Search .icon-x
             right 139px
-            top 24px
 
     /** Large Devices **/
     @media (min-width 992px)
