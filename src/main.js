@@ -13,9 +13,9 @@ import EventsView       from './components/events/Events.vue'
 import HomeView         from './components/pages/Home.vue'
 import MixtapeView      from './components/mixtapes/Mixtape.vue'
 import MixtapesView     from './components/mixtapes/Mixtapes.vue'
-import MusicVideoView   from './components/music/MusicVideo.vue'
-import MusicVideosView  from './components/music/MusicVideos.vue'
-import NotFoundView     from './components/errors/NotFound.vue'
+import MusicVideoView   from './components/music/Music-Video.vue'
+import MusicVideosView  from './components/music/Music-Videos.vue'
+import NotFoundView     from './components/errors/Not-Found.vue'
 
 /**
  * Install router.

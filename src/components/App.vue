@@ -13,10 +13,10 @@
 </template>
 
 <script>
-    import Footer       from './common/Footer.vue'
-    import Header       from './common/Header.vue'
-    import Newsletter   from './common/Newsletter.vue'
-    import Search       from './common/Search.vue'
+    import Footer       from './layout/Footer.vue'
+    import Header       from './layout/Header.vue'
+    import Newsletter   from './misc/Newsletter.vue'
+    import Search       from './misc/Search.vue'
 
     export default 
     {
