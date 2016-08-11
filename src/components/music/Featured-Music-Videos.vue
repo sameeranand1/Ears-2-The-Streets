@@ -71,6 +71,9 @@
         lost-column 1 1 0
         position relative
 
+    .Featured_Music_Videos .Music_Video:nth-child(2)
+        background-color darken($BRAND_LIGHTER_BLUE, 10%)
+
     .Featured_Music_Videos .Music_Video:nth-child(2),
     .Featured_Music_Videos .Music_Video:last-child
         display none
