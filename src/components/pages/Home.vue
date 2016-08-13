@@ -8,21 +8,21 @@
 
             <div class="Column--left">
 
-                <div class="Module"></div>
-                <div class="Module"></div>
-                <div class="Module"></div>
-                <div class="Module"></div>
-                <div class="Module"></div>
+                <div class="Module"><exclusive-music-videos></exclusive-music-videos></div>
+                <div class="Module"><featured-mixtapes></featured-mixtapes></div>
+                <div class="Module"><hottest-music-videos></hottest-music-videos></div>
+                <div class="Module"><dope-mixtapes></dope-mixtapes></div>
+                <div class="Module"><upcoming-events></upcoming-events></div>
 
             </div>
 
             <div class="Column--right">
 
+                <div class="Module"><exclusive-mixtape></exclusive-mixtape></div>
                 <div class="Module"></div>
-                <div class="Module"></div>
-                <div class="Module"></div>
-                <div class="Module"></div>
-                <div class="Module"></div>
+                <div class="Module"><trending-mixtapes></trending-mixtapes></div>
+                <div class="Module"><community-poll></community-poll></div>
+                <div class="Module"><trending-artists></trending-artists></div>
 
             </div>
 
@@ -34,13 +34,31 @@
 
 <script>
 
-    import FeaturedMusicVideos       from '../music/Featured-Music-Videos.vue'
+    import CommunityPoll            from '../misc/Community-Poll.vue'
+    import DopeMixtapes             from '../mixtapes/Dope-Mixtapes.vue'
+    import ExclusiveMixtape         from '../mixtapes/Exclusive-Mixtape.vue'
+    import ExclusiveMusicVideos     from '../music/Exclusive-Music-Videos.vue'
+    import FeaturedMixtapes         from '../mixtapes/Featured-Mixtapes.vue'
+    import FeaturedMusicVideos      from '../music/Featured-Music-Videos.vue'
+    import HottestMusicVideos       from '../music/Hottest-Music-Videos.vue'
+    import TrendingArtists          from '../artists/Trending-Artists.vue'
+    import TrendingMixtapes         from '../mixtapes/Trending-Mixtapes.vue'
+    import UpcomingEvents           from '../events/Upcoming-Events.vue'
 
     export default 
     {
         components:
         {
-            'featured-music-videos':    FeaturedMusicVideos
+            'community-poll':           CommunityPoll,
+            'dope-mixtapes':            DopeMixtapes,
+            'exclusive-mixtape':        ExclusiveMixtape,
+            'exclusive-music-videos':   ExclusiveMusicVideos,
+            'featured-mixtapes':        FeaturedMixtapes,
+            'featured-music-videos':    FeaturedMusicVideos,
+            'hottest-music-videos':     HottestMusicVideos,
+            'trending-artists':         TrendingArtists,
+            'trending-mixtapes':        TrendingMixtapes,
+            'upcoming-events':          UpcomingEvents
         }
     }
 </script>
@@ -51,41 +69,52 @@
         padding-top 0
 
     .Home .Container
+        lost-flex-container row
         lost-utility clearfix
-        lost-utility edit
         padding-top 20px
 
     .Home .Column--left,
     .Home .Column--right
         height 100%
+        lost-utility clearfix
 
     .Home .Column--left
+        lost-column var(--width) 0 20px flex
         margin-bottom 20px
+        --width: 1
+
+    .Home .Column--right
+        lost-column var(--width) 0 20px flex
+        --width: 1
 
     .Home .Module
+        lost-waffle 1 1 20px flex
         min-height 300px
-        lost-row 1 20px
 
+    @media (min-width 768px)
+
+        .Home .Column--left
+            margin-bottom 0
+            --width: calc(1 - (300 / ( 768 - 30 )))
+
+        .Home .Column--right
+            --width: calc(300 / ( 768 - 30 ))
+    
     @media (min-width 992px)
 
         .Home .Column--left
             --width: calc(1 - (300 / ( 992 - 30 )))
-            lost-column var(--width) 0 20px
-            margin-bottom 0
 
         .Home .Column--right
-            --width: calc( 300 / ( 992 - 30 ))
-            lost-column var(--width) 0 20px
-
+            --width: calc(300 / ( 992 - 30 ))
+    
     @media (min-width 1200px)
 
         .Home .Column--left
             --width: calc(1 - (300 / ( 1200 - 30 )))
-            lost-column var(--width) 0 20px
 
         .Home .Column--right
-            --width: calc( 300 / ( 1200 - 30 ))
-            lost-column var(--width) 0 20px
+            --width: calc(300 / ( 1200 - 30 ))
 
 
 </style>

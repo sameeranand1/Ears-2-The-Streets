@@ -74,10 +74,6 @@
     .Featured_Music_Videos .Music_Video:nth-child(2)
         background-color darken($BRAND_LIGHTER_BLUE, 10%)
 
-    .Featured_Music_Videos .Music_Video:nth-child(2),
-    .Featured_Music_Videos .Music_Video:last-child
-        display none
-
     .Featured_Music_Videos .Music_Video .Player_Wrapper
         align-items center
         display flex
@@ -108,10 +104,11 @@
 
         .Featured_Music_Videos .Music_Video
             height 300px
-            lost-column 1/2 2 0
+            lost-column 1 1 0
 
-        .Featured_Music_Videos .Music_Video:nth-child(2)
-            display flex
+        .Featured_Music_Videos .Music_Video:nth-child(2),
+        .Featured_Music_Videos .Music_Video:last-child
+            lost-column 1/2 2 0
 
         .Featured_Music_Videos .Music_Video .Data
             bottom 34px
@@ -125,12 +122,11 @@
 
     @media (min-width 992px)
 
-        .Featured_Music_Videos .Music_Video
+        .Featured_Music_Videos .Music_Video,
+        .Featured_Music_Videos .Music_Video:nth-child(2),
+        .Featured_Music_Videos .Music_Video:last-child
             height 440px
             lost-column 1/3 3 0
-
-        .Featured_Music_Videos .Music_Video:last-child
-            display flex
 
         .Featured_Music_Videos .Music_Video .Data
             bottom 50px

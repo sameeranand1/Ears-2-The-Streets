@@ -1,5 +1,5 @@
 <template>
-
+    <p>Trending Mixtapes</p>
 </template>
 
 <script>

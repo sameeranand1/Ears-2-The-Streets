@@ -1,5 +1,5 @@
 <template>
-
+    <p>Exclusive Mixtape</p>
 </template>
 
 <script>
