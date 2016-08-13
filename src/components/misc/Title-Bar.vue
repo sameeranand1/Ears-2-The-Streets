@@ -47,32 +47,12 @@
         position relative
 
     .Title_Bar .Left
-        background repeating-linear-gradient(
-            -40deg,
-            #292a30,
-            #292a30 1px,
-            #313239 1px,
-            #313239 7px
-        )
+        background url('../../assets/images/title-bar-background.svg')
+        background-position bottom right
+        background-repeat no-repeat
+        background-size 160%
         width 220px
         z-index 3
-
-    .Title_Bar .Left:after
-        border-bottom 5px solid $WHITE
-        border-left 4px solid transparent
-        border-right 10px solid $WHITE
-        bottom 3px
-        content ''
-        position absolute
-        right 0
-
-    .Title_Bar .Left:before
-        border-bottom 15px solid #A4AAAA
-        border-left 15px solid transparent
-        bottom 3px
-        content ''
-        position absolute
-        right 0
 
     .Title_Bar .Right
         flex 1
