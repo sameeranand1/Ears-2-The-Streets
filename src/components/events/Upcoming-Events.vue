@@ -4,7 +4,9 @@
 
         <header class="Header">
 
-            <title-bar top="Upcoming" bottom="Events"></title-bar>
+            <title-bar top="Upcoming" bottom="Events">
+                <small>more <span class="icon-arrow-right2"></span></small>
+            </title-bar>
 
         </header>
 

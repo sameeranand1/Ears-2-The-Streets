@@ -4,7 +4,9 @@
 
         <header class="Header">
 
-            <title-bar top="Dope" bottom="Mixtapes"></title-bar>
+            <title-bar top="Dope" bottom="Mixtapes">
+                <small>more <span class="icon-arrow-right2"></span></small>
+            </title-bar>
 
         </header>
 

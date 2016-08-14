@@ -4,7 +4,9 @@
 
         <header class="Header">
 
-            <title-bar top="Featured" bottom="Mixtapes"></title-bar>
+            <title-bar top="Featured" bottom="Mixtapes">
+                <small>How to become featured?</small>
+            </title-bar>
 
         </header>
 

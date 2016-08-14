@@ -4,7 +4,9 @@
 
         <header class="Header">
 
-            <title-bar top="Exclusive" bottom="Music Videos"></title-bar>
+            <title-bar top="Exclusive" bottom="Music Videos">
+                <small>How to become exclusive?</small>
+            </title-bar>
 
         </header>
 

@@ -4,7 +4,9 @@
 
         <header class="Header">
 
-            <title-bar top="The Hottest" bottom="Music Videos"></title-bar>
+            <title-bar top="The Hottest" bottom="Music Videos">
+                <small>more <span class="icon-arrow-right2"></span></small>
+            </title-bar>
 
         </header>
 
