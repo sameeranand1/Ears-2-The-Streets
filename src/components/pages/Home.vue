@@ -90,6 +90,7 @@
     .Home .Module
         lost-waffle 1 1 20px flex
         min-height 300px
+        position relative
 
     @media (min-width 768px)
 
