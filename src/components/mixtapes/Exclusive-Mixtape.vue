@@ -139,6 +139,7 @@
         {
             this.pause();
             this.getPlayer().preload = "none";
+            this.reload();
         },
 
         /**
