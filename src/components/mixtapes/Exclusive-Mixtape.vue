@@ -137,9 +137,7 @@
          */
         beforeDestroy()
         {
-            this.pause();
-            this.getPlayer().preload = "none";
-            this.reload();
+            this.unload();
         },
 
         /**
@@ -625,6 +623,20 @@
                 }
 
                 return this.getPlayer().muted = !this.getPlayer().muted;
+            },
+
+            /**
+             * Unloads the music player on mobile devices when
+             * user navigates away from the page or closes the browser.
+             * 
+             * @return void
+             */
+            unload()
+            {
+                this.pause();
+                this.getPlayer().preload = "none";
+                this.reload();
+                return;
             }
         },
 
