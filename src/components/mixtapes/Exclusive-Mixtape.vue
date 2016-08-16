@@ -512,7 +512,6 @@
              */
             onSeeked()
             {
-                console.log('seeked');
                 this.seeking = false;
                 this.loading = false;
             },
@@ -525,7 +524,6 @@
              */
             onSeeking()
             {
-                console.log('seeking');
                 this.seeking = true;
                 return this.loading = true;
             },
@@ -635,6 +633,11 @@
 
                 this.loading = false;
 
+                if (this.seeking)
+                {
+                    this.onSeeked();
+                }
+
                 this.play();
             },
 
@@ -657,6 +660,11 @@
                 this.reload();
 
                 this.loading = false;
+
+                if (this.seeking)
+                {
+                    this.onSeeked();
+                }
                 
                 this.play();
             },
