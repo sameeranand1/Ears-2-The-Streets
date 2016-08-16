@@ -787,6 +787,13 @@
         width 5px
 
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Slider input[type=range]::-moz-range-track
+        background #D7D7D7
+        border none
+        border-radius none
+        cursor pointer
+        height 4px
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Slider input[type=range]::-moz-range-progress
         background #8E8F98
         border none
         border-radius none
