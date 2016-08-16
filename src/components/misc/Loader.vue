@@ -38,7 +38,7 @@
         z-index 1000
 
     .Loader.fade-transition
-        transition opacity .3s ease-in-out
+        transition opacity 1s ease-in-out
 
     .Loader.fade-enter,
     .Loader.fade-leave
