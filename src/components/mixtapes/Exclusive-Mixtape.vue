@@ -14,6 +14,7 @@
             @play="onPlay()"
             @pause="onPause()"
             @canplay="onCanPlay()"
+            @volumechange="onVolumeChange"
         >
         </audio>
 
@@ -67,20 +68,20 @@
 
                     <div class="Playback_Controls">
 
-                        <div class="Icon Back_Icon" v-on:click="playPreviousSong()">
-                            <span class="icon-previous"></span>
+                        <div class="Icon Back_Icon">
+                            <button type="button" @click="playPreviousSong()"><span class="icon-previous"></span></button>
                         </div>
 
-                        <div class="Icon Play_Icon" v-on:click="play()" v-show="!isPlaying()">
-                            <span class="icon-play"></span>
+                        <div class="Icon Play_Icon" v-show="!isPlaying()">
+                            <button type="button" @click="play()"><span class="icon-play"></span></button>
                         </div>
 
-                        <div class="Icon Pause_Icon" v-on:click="pause()" v-show="isPlaying()">
-                            <span class="icon-pause"></span>
+                        <div class="Icon Pause_Icon" v-show="isPlaying()">
+                            <button type="button" @click="pause()"><span class="icon-pause"></span></button>
                         </div>
 
-                        <div class="Icon Forward_Icon" v-on:click="playNextSong()">
-                            <span class="icon-next"></span>
+                        <div class="Icon Forward_Icon">
+                            <button type="button" @click="playNextSong()"><span class="icon-next"></span></button>
                         </div>
 
                     </div>
@@ -88,10 +89,17 @@
                     <div class="Volume_Controls">
 
                         <div class="Volume_Slider">
+                        
+                            <input type="range" min="0" max="1" step=".05" v-model="volume" v-el:volume @input="onVolumeChanged()">
 
                         </div>
 
-                        <div class="Volume_Icon">
+                        <div class="Icon Volume_Icon">
+
+                            <button type="button" @click="toggleVolume()" v-show="volume >= 0.75 && !muted"><span class="icon-volume-high"></span></button>
+                            <button type="button" @click="toggleVolume()" v-show="volume >= 0.25 && volume < 0.75 && !muted"><span class="icon-volume-medium"></span></button>
+                            <button type="button" @click="toggleVolume()" v-show="volume >= 0.01 && volume < 0.25 && !muted"><span class="icon-volume-low"></span></button>
+                            <button type="button" @click="toggleVolume()" v-show="muted"><span class="icon-volume-mute"></span></button>
 
                         </div>
 
@@ -136,6 +144,8 @@
                 current: null,
 
                 loading: true,
+
+                muted: false,
 
                 playing: false,
 
@@ -237,7 +247,11 @@
                         img:    'https://s3.amazonaws.com/ears2thestreets/last-year-was-complicated.jpg',
                         src:    'https://s3.amazonaws.com/ears2thestreets/12+Comfortable.mp3'
                     }
-                ]
+                ],
+
+                volume: 1,
+
+                volume_saved: null
 
             }
         },
@@ -355,6 +369,36 @@
             },
 
             /**
+             * Returns the volume.
+             * 
+             * @return int
+             */
+            getVolume()
+            {
+                return this.volume;
+            },
+
+            /**
+             * Returns the volume control input.
+             * 
+             * @return el
+             */
+            getVolumeControl()
+            {
+                return this.$els.volume;
+            },
+
+            /**
+             * Returns true if the player is muted.
+             * 
+             * @return boolen
+             */
+            isMuted()
+            {
+                return this.getPlayer().muted || this.volume == 0;
+            },
+
+            /**
              * Returns true if the player is playing.
              * 
              * @return boolean
@@ -410,11 +454,44 @@
             },
 
             /**
+             * Event occurs when volume of audio has been changed.
+             * 
+             * @return void
+             */
+            onVolumeChange()
+            {
+                if (this.isMuted())
+                {
+                    return this.muted = true;
+                }
+
+                return this.muted = false;
+            },
+
+            /**
+             * Event occurs when volume slider value has changed.
+             * 
+             * @return void
+             */
+            onVolumeChanged()
+            {
+                if (this.isMuted() && (this.getVolume() > 0)) {
+                    this.muted = false;
+                    this.getPlayer().muted = false;
+                    this.volume_saved = null;
+                }
+
+                return this.getPlayer().volume = this.getVolume();
+            },
+
+            /**
              * Event occurs when media has paused but is expected to resume (during buffer).
+             * 
+             * @return void
              */
             onWaiting()
             {
-                this.loading = true;
+                return this.loading = true;
             },
 
             /**
@@ -502,6 +579,35 @@
             setCurrentSong(song)
             {
                 return this.current = song;
+            },
+
+            /**
+             * Set the player's volume.
+             * 
+             * @params int volume - volume to set
+             * @return void
+             */
+            setVolume(volume)
+            {
+                this.volume = volume;
+                this.getPlayer().volume = volume;
+            },
+
+            /**
+             * Toggle volume (mute / unmute).
+             * 
+             * @return void
+             */
+            toggleVolume()
+            {
+                if (!this.isMuted()) {
+                    this.volume_saved = this.getVolume();
+                    this.setVolume(0);
+                } else {
+                    this.setVolume(this.volume_saved);
+                }
+
+                return this.getPlayer().muted = !this.getPlayer().muted;
             }
         },
 
@@ -614,32 +720,49 @@
         margin-top 20px
         width 150px
 
-    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Icon
-        cursor pointer
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Icon span
         font-size 20px
 
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Back_Icon
         color #8E8F98
 
-    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Play_Icon
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Play_Icon span
         color $BRAND_BLUE
         font-size 26px
 
-    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Pause_Icon
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Pause_Icon span
         color $BRAND_BLUE
         font-size 26px
 
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Forward_Icon
         color #8E8F98
 
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Icon button
+        background none
+        border none
+        cursor pointer
+        margin 0
+        padding 0
+
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls
-        /** Todo **/
+        align-items center
+        display flex
+        justify-content space-between
+        margin-top 20px
 
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Slider
         /** Todo **/
 
-    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Icon
-        /** Todo **/
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Icon button
+        background none
+        border none
+        cursor pointer
+        margin 0
+        padding 0
+    
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Icon span
+        color #8E8F98
+        font-size 17px
 
     .Exclusive_Mixtape .Wrapper .Logo
         /** Todo **/
