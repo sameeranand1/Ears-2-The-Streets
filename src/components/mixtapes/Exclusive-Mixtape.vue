@@ -15,6 +15,8 @@
             @pause="onPause()"
             @canplay="onCanPlay()"
             @volumechange="onVolumeChange()"
+            @ended="onEnded()"
+            @timeupdate="onTimeUpdate()"
         >
         </audio>
 
@@ -55,7 +57,12 @@
                 <div class="Player_Controls">
 
                     <div class="Playback_Slider">
+                        <input type="range" min="0" :max="maxDuration" step="1" v-model="time" v-el:time @input="onTimeUpdated()">
+                    </div>
 
+                    <div class="Time">
+                        <span class="Start">{{ currentTime | time }}</span>
+                        <span class="End">{{ duration | time }}</span>
                     </div>
 
                     <div class="Info">
@@ -132,6 +139,17 @@
             'title-bar':    TitleBar
         },
 
+        filters:
+        {
+            time: function(seconds)
+            {
+                var h = Math.floor(seconds / 3600);
+                var m = Math.floor(seconds % 3600 / 60);
+                var s = Math.floor(seconds % 3600 % 60);
+                return ((h > 0 ? h + ":" + (m < 10 ? "0" : "") : "") + m + ":" + (s < 10 ? "0" : "") + s);
+            }
+        },
+
         /**
          * Called before the instance is destroyed.
          */
@@ -153,6 +171,12 @@
             return {
 
                 current: null,
+
+                currentTime: 0,
+
+                duration: 0,
+
+                maxDuration: 0,
 
                 loading: true,
 
@@ -259,6 +283,8 @@
                         src:    'https://s3.amazonaws.com/ears2thestreets/12+Comfortable.mp3'
                     }
                 ],
+
+                time: 0,
 
                 volume: 1,
 
@@ -427,6 +453,18 @@
             onCanPlay()
             {
                 this.playing = false;
+                this.maxDuration = this.getPlayer().duration;
+                this.onTimeUpdate();
+            },
+
+            /**
+             * Event occurs when the current track has ended.
+             * 
+             * @return void
+             */
+            onEnded()
+            {
+                return this.playNextSong();
             },
 
             /**
@@ -462,6 +500,29 @@
                 if (this.loading) {
                     return this.loading = false;
                 }
+            },
+
+            /**
+             * Event occurs when the playing position of the audio has changed.
+             * 
+             * @return void
+             */
+            onTimeUpdate()
+            {
+                this.currentTime = Math.trunc(this.getPlayer().currentTime);
+                this.time = this.currentTime;
+                this.duration = Math.trunc(this.getPlayer().duration) - this.currentTime;
+                return;
+            },
+
+            /**
+             * Event occurs when time slider value has changed.
+             * 
+             * @return void
+             */
+            onTimeUpdated()
+            {
+                return this.getPlayer().currentTime = this.time;
             },
 
             /**
@@ -712,9 +773,78 @@
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls
         background-color $WHITE
         padding 15px
+        position relative
 
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Slider
-        /** Todo **/
+        left 0
+        position absolute
+        right 0
+        top -8px
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Slider input[type=range]
+        background transparent
+        border none
+        height 20px
+        padding 0
+        -webkit-appearance none
+        width 100%
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Slider input[type=range]:focus
+        outline none
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Slider input[type=range]::-webkit-slider-runnable-track
+        background $BRAND_YELLOW
+        border none
+        border-radius none
+        cursor pointer
+        height 4px
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Slider input[type=range]::-webkit-slider-thumb
+        background $BRAND_YELLOW
+        border none
+        border-radius 0
+        cursor pointer
+        height 20px
+        margin-top -8px
+        -webkit-appearance none
+        width 5px
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Slider input[type=range]::-moz-range-track
+        background #D7D7D7
+        border none
+        border-radius none
+        cursor pointer
+        height 4px
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Slider input[type=range]::-moz-range-progress
+        background $BRAND_YELLOW
+        border none
+        border-radius none
+        cursor pointer
+        height 4px
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Slider input[type=range]::-moz-range-thumb
+        background $BRAND_YELLOW
+        border none
+        border-radius 0
+        cursor pointer
+        height 20px
+        margin-top -8px
+        -webkit-appearance none
+        width 5px
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Time
+        align-items center
+        display flex
+        justify-content space-between
+        margin-bottom 20px
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Time .Start,
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Time .End
+        color #8E8F98
+        font-family inherit
+        font-size 13px
+        font-weight normal
 
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Info
         text-align center
@@ -788,6 +918,7 @@
 
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Slider input[type=range]
         border none
+        padding 0
         -webkit-appearance none
         width 100%
 
