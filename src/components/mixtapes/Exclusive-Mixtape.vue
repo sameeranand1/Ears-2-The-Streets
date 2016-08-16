@@ -604,7 +604,11 @@
                     this.volume_saved = this.getVolume();
                     this.setVolume(0);
                 } else {
-                    this.setVolume(this.volume_saved);
+                    if (this.volume_saved != null) {
+                        this.setVolume(this.volume_saved);
+                    } else {
+                        this.setVolume(1);
+                    }
                 }
 
                 return this.getPlayer().muted = !this.getPlayer().muted;
@@ -723,7 +727,7 @@
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Icon span
         font-size 20px
 
-    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Back_Icon
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Back_Icon span
         color #8E8F98
 
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Play_Icon span
@@ -734,7 +738,7 @@
         color $BRAND_BLUE
         font-size 26px
 
-    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Forward_Icon
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Forward_Icon span
         color #8E8F98
 
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Controls .Icon button
@@ -751,14 +755,69 @@
         margin-top 20px
 
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Slider
-        /** Todo **/
+        align-items center
+        display flex
+        height 20px
+        justify-content center
+        width calc(100% - 40px)
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Slider input[type=range]
+        border none
+        -webkit-appearance none
+        width 100%
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Slider input[type=range]:focus
+        outline none
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Slider input[type=range]::-webkit-slider-runnable-track
+        background #8E8F98
+        border none
+        border-radius none
+        cursor pointer
+        height 4px
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Slider input[type=range]::-webkit-slider-thumb
+        background #8E8F98
+        border none
+        border-radius 0
+        cursor pointer
+        height 20px
+        margin-top -8px
+        -webkit-appearance none
+        width 5px
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Slider input[type=range]::-moz-range-track
+        background #8E8F98
+        border none
+        border-radius none
+        cursor pointer
+        height 4px
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Slider input[type=range]::-moz-range-thumb
+        background #8E8F98
+        border none
+        border-radius 0
+        cursor pointer
+        height 20px
+        margin-top -8px
+        -webkit-appearance none
+        width 5px
+
+    .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Icon
+        align-items center
+        display flex
+        height 20px
+        justify-content center
+        width 20px
 
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Icon button
         background none
         border none
         cursor pointer
+        height 20px
         margin 0
         padding 0
+        width 20px
     
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Volume_Controls .Volume_Icon span
         color #8E8F98
