@@ -14,7 +14,7 @@
             @play="onPlay()"
             @pause="onPause()"
             @canplay="onCanPlay()"
-            @volumechange="onVolumeChange"
+            @volumechange="onVolumeChange()"
         >
         </audio>
 
@@ -132,6 +132,18 @@
             'title-bar':    TitleBar
         },
 
+        /**
+         * Called before the instance is destroyed.
+         */
+        beforeDestroy()
+        {
+            this.pause();
+            this.getPlayer().preload = "none";
+        },
+
+        /**
+         * Called after the instance is created.
+         */
         created()
         {
             this.setCurrentSong(this.getFirstSong());
