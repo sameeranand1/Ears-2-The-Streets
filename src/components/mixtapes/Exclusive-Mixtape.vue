@@ -118,6 +118,8 @@
 
             <div class="Logo">
 
+                <img src="../../assets/images/logo-no-gradient.svg" alt="Logo">
+
             </div>
 
         </div>
@@ -718,6 +720,9 @@
 
     @require '../../stylus/common/colors'
 
+    .Exclusive_Mixtape
+        padding-bottom 15px
+
     .Exclusive_Mixtape .Wrapper
         background-color $BRAND_LIGHTER_BLUE
         border-radius 6px
@@ -772,6 +777,8 @@
 
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls
         background-color $WHITE
+        border-bottom-left-radius 6px
+        border-bottom-right-radius 6px
         padding 15px
         position relative
 
@@ -987,6 +994,24 @@
         font-size 17px
 
     .Exclusive_Mixtape .Wrapper .Logo
-        /** Todo **/
+        height 40px
+        text-align center
+
+    .Exclusive_Mixtape .Wrapper .Logo img
+        margin-top -10px
+        width 245px
+        position relative
+        z-index 1000
+
+    @media (min-width 768px)
+
+        .Exclusive_Mixtape .Wrapper .Logo
+            height 38px
+
+        .Exclusive_Mixtape .Wrapper .Logo img
+            margin-top -10px
+            position relative
+            width 100%
+            z-index 1000
 
 </style>
