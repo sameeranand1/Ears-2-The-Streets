@@ -815,6 +815,7 @@
         position absolute
         right 0
         top -8px
+        z-index 2000
 
     .Exclusive_Mixtape .Wrapper .Player .Player_Controls .Playback_Slider input[type=range]
         background transparent

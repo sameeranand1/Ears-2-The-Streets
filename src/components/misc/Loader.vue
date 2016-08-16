@@ -26,7 +26,7 @@
     .Loader
         align-items center
         background-color alpha($BRAND_BLUE, 0.75)
-        border-radius 6px
+        border-radius 0
         display flex
         height 100%
         justify-content center
