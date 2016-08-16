@@ -97,7 +97,7 @@
 
                         <div class="Volume_Slider">
                         
-                            <input type="range" min="0" max="1" step=".05" v-model="volume" v-el:volume @input="onVolumeChanged()">
+                            <input type="range" min="0" max="1" step=".01" v-model="volume" v-el:volume @input="onVolumeChanged()">
 
                         </div>
 
