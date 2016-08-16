@@ -22,8 +22,6 @@
 
         <div class="Wrapper">
 
-            <loader :visible="loading"></loader>
-
             <div class="Top_Bar">
 
                 <div class="Left">
@@ -51,13 +49,14 @@
             <div class="Player">
 
                 <div class="Cover_Image" :style="{ 'background-image': 'url(' + getCurrentSong().img + ')' }">
+                    <loader :visible="loading"></loader>
                     <img src="../../assets/images/logo-mascot.svg" alt="Logo" class="Logo" v-show="!doesCurrentSongHaveImage()">
                 </div>
 
                 <div class="Player_Controls">
 
                     <div class="Playback_Slider">
-                        <input type="range" min="0" :max="maxDuration" step="1" v-model="time" v-el:time @input="onTimeUpdated()">
+                        <input type="range" min="0" :max="maxDuration" step="1" v-model="time" v-el:time @input="onTimeUpdated()" @change="onSeeked()">
                     </div>
 
                     <div class="Time">
@@ -286,6 +285,8 @@
                     }
                 ],
 
+                seeking: false,
+
                 time: 0,
 
                 volume: 1,
@@ -457,6 +458,11 @@
                 this.playing = false;
                 this.maxDuration = this.getPlayer().duration;
                 this.onTimeUpdate();
+
+                if (!this.seeking)
+                {
+                    this.loading = false;
+                }
             },
 
             /**
@@ -486,7 +492,7 @@
              */
             onPlay()
             {
-                this.playing = true;
+                return this.playing = true;
             },
 
             /**
@@ -497,11 +503,31 @@
              */
             onPlaying()
             {
-                this.playing = true;
+                return this.playing = true;
+            },
 
-                if (this.loading) {
-                    return this.loading = false;
-                }
+            /**
+             * Event occurs when the user is finished moving / skipping to a new
+             * position in the audio.
+             */
+            onSeeked()
+            {
+                console.log('seeked');
+                this.seeking = false;
+                this.loading = false;
+            },
+
+            /**
+             * Event occurs when user starts moving / skipping to a new position in 
+             * the audio.
+             * 
+             * @return void
+             */
+            onSeeking()
+            {
+                console.log('seeking');
+                this.seeking = true;
+                return this.loading = true;
             },
 
             /**
@@ -524,6 +550,7 @@
              */
             onTimeUpdated()
             {
+                this.onSeeking();
                 return this.getPlayer().currentTime = this.time;
             },
 
@@ -770,6 +797,7 @@
         justify-content center
         height 260px
         overflow hidden
+        position relative
 
     .Exclusive_Mixtape .Wrapper .Player .Cover_Image .Logo
         margin 90px 0

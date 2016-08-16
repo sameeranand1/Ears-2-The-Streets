@@ -38,13 +38,12 @@
         z-index 1000
 
     .Loader.fade-transition
-        transition all 1.2s ease-in-out
+        transition opacity 1s ease-in-out
 
     .Loader.fade-enter
         opacity 1
 
     .Loader.fade-leave
-        height 0
         opacity 0
 
     .Loader h4
