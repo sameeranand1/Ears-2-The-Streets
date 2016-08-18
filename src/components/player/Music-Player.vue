@@ -97,7 +97,7 @@
              */
             unload()
             {
-                this.pause();
+                this.getPlayer().pause();
                 this.getPlayer().preload = "none";
                 this.getPlayer().load();
                 return;
