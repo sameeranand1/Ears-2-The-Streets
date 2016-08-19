@@ -34,7 +34,6 @@
 
     .Music_Videos .Music_Video .Cover_Image
             background-color #222329
-            background-image url("../../assets/images/music_videos/example.png")
             background-position center
             background-repeat no-repeat
             background-size cover
