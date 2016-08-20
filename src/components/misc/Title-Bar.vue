@@ -34,6 +34,7 @@
 
     @require '../../stylus/common/colors'
 
+    .Title_Bar[_s-00000] span.icon-help,
     .Title_Bar[_s-00000] small
         color #898C9A
         font-family inherit
@@ -44,11 +45,16 @@
         text-align right
         transition color .3s ease
 
+    .Title_Bar[_s-00000] span.icon-help
+        font-size 16px
+        right -5px
+
     .Title_Bar[_s-00000] small .icon-arrow-right2
         left 3px
         position relative
         top 1.3px
 
+    .Title_Bar[_s-00000] span.icon-help:hover,
     .Title_Bar[_s-00000] small:hover
         color $BRAND_BLUE
         cursor pointer

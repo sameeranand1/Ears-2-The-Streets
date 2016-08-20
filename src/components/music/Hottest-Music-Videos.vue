@@ -12,6 +12,10 @@
 
         <music-videos :music_videos="music_videos"></music-videos>
 
+        <div class="More_Music_Videos">
+            <button class="Button">More Music Videos</button>
+        </div
+
     </div>
 
 </template>
@@ -60,5 +64,22 @@
         background-color $WHITE
         border-radius 6px
         padding 20px
+
+    .Hottest_Music_Videos .Title_Bar small
+        display none
+
+    .Hottest_Music_Videos .More_Music_Videos
+        margin-top 15px
+
+    .Hottest_Music_Videos .More_Music_Videos button
+        width 100%
+
+    @media (min-width 544px)
+
+        .Hottest_Music_Videos .Title_Bar small
+            display block
+        
+        .Hottest_Music_Videos .More_Music_Videos
+            display none
 
 </style>

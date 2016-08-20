@@ -54,4 +54,22 @@
         border-radius 6px
         padding 20px
 
+    .Featured_Mixtapes .Title_Bar small
+        display none
+
+    @media (min-width 544px)
+
+        .Featured_Mixtapes .Title_Bar small
+            display block
+
+    @media (min-width 768px)
+
+        .Featured_Mixtapes .Title_Bar small
+            display none
+
+    @media (min-width 992px)
+
+        .Featured_Mixtapes .Title_Bar small
+            display block
+
 </style>

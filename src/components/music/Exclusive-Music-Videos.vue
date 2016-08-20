@@ -5,6 +5,7 @@
         <header class="Header">
 
             <title-bar top="Exclusive" bottom="Music Videos">
+                <span class="icon-help"></span>
                 <small>How to become exclusive?</small>
             </title-bar>
 
@@ -54,5 +55,35 @@
         background-color $WHITE
         border-radius 6px
         padding 20px
+
+    .Exclusive_Music_Videos .Title_Bar .icon-help
+        display block
+
+    .Exclusive_Music_Videos .Title_Bar small
+        display none
+
+    @media (min-width 544px)
+
+        .Exclusive_Music_Videos .Title_Bar .icon-help
+            display none
+
+        .Exclusive_Music_Videos .Title_Bar small
+            display block
+
+    @media (min-width 768px)
+
+        .Exclusive_Music_Videos .Title_Bar .icon-help
+            display block
+
+        .Exclusive_Music_Videos .Title_Bar small
+            display none
+
+    @media (min-width 992px)
+
+        .Exclusive_Music_Videos .Title_Bar .icon-help
+            display none
+
+        .Exclusive_Music_Videos .Title_Bar small
+            display block
 
 </style>
