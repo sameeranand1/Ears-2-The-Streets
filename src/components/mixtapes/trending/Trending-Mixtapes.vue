@@ -158,7 +158,7 @@
     .Trending_Mixtapes .Header .Header_Tabs li + li::before
         color #A3A5B0
         content ' | '
-        padding 0 10px
+        padding 0 9px
 
     .Trending_Mixtapes .Header .Header_Tabs li.active a
         color $BRAND_LIGHT_BLUE
