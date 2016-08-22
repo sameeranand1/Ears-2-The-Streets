@@ -38,8 +38,8 @@
 
 <script>
 
-    import Mixtapes     from '../mixtapes/Mixtapes-Module.vue'
-    import TitleBar     from '../misc/Title-Bar.vue'
+    import Mixtapes     from './Mixtapes.vue'
+    import TitleBar     from '../../misc/Title-Bar.vue'
 
     export default 
     {
@@ -161,7 +161,7 @@
 
 <style lang="stylus" scoped>
 
-    @require '../../stylus/common/colors'
+    @require '../../../stylus/common/colors'
 
     .Dope_Mixtapes
         background-color $WHITE

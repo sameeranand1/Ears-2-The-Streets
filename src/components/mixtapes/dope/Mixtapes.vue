@@ -40,7 +40,7 @@
 
 <style lang="stylus" scoped>
 
-    @require '../../stylus/common/colors'
+    @require '../../../stylus/common/colors'
 
     .Mixtapes
         background-color $WHITE

@@ -35,15 +35,15 @@
 <script>
 
     import CommunityPoll            from '../misc/Community-Poll.vue'
-    import DopeMixtapes             from '../mixtapes/Dope-Mixtapes.vue'
-    import ExclusiveMixtape         from '../mixtapes/Exclusive-Mixtape.vue'
+    import DopeMixtapes             from '../mixtapes/dope/Dope-Mixtapes.vue'
+    import ExclusiveMixtape         from '../mixtapes/exclusive/Exclusive-Mixtape.vue'
     import ExclusiveMusicVideos     from '../music/Exclusive-Music-Videos.vue'
     import FeaturedEvent            from '../events/Featured-Event.vue'
-    import FeaturedMixtapes         from '../mixtapes/Featured-Mixtapes.vue'
+    import FeaturedMixtapes         from '../mixtapes/featured/Featured-Mixtapes.vue'
     import FeaturedMusicVideos      from '../music/Featured-Music-Videos.vue'
     import HottestMusicVideos       from '../music/Hottest-Music-Videos.vue'
     import TrendingArtists          from '../artists/Trending-Artists.vue'
-    import TrendingMixtapes         from '../mixtapes/Trending-Mixtapes.vue'
+    import TrendingMixtapes         from '../mixtapes/trending/Trending-Mixtapes.vue'
     import UpcomingEvents           from '../events/Upcoming-Events.vue'
 
     export default 

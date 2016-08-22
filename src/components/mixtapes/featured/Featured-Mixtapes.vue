@@ -44,7 +44,7 @@
 
 <script>
 
-    import TitleBar from '../misc/Title-Bar.vue'
+    import TitleBar from '../../misc/Title-Bar.vue'
 
     export default 
     {
@@ -71,7 +71,7 @@
 
 <style lang="stylus" scoped>
 
-    @require '../../stylus/common/colors'
+    @require '../../../stylus/common/colors'
 
     .Featured_Mixtapes
         background-color $WHITE

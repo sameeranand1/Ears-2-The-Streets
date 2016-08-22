@@ -70,6 +70,7 @@
         font-family inherit
         font-size 17px
         font-weight bold
+        line-height 1.4
 
     .Newsletter .Heading h4 .below
         display inline-block

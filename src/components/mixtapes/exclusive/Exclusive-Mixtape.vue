@@ -16,8 +16,8 @@
 
 <script>
 
-    import MusicPlayer from '../player/Music-Player.vue'
-    import TitleBar from '../misc/Title-Bar.vue'    
+    import MusicPlayer from '../../player/Music-Player.vue'
+    import TitleBar from '../../misc/Title-Bar.vue'    
 
     export default
     {
