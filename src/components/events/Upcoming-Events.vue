@@ -140,7 +140,7 @@
         font-family inherit
         font-size 13px
         font-weight normal
-        line-height 1.2
+        line-height 1.5
         text-align justify
 
     .Upcoming_Events .More_Events
