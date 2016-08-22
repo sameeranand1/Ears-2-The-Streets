@@ -5,7 +5,11 @@
         <header class="Header">
 
             <title-bar top="Dope" bottom="Mixtapes">
+
+                <title-bar-nav :links="title_bar_links"></title-bar-nav>
+
                 <small>more <span class="icon-arrow-right2"></span></small>
+
             </title-bar>
 
         </header>
@@ -26,20 +30,23 @@
 
 <script>
 
-    import Mixtapes from '../mixtapes/Mixtapes-Module.vue'
-    import TitleBar from '../misc/Title-Bar.vue'
+    import Mixtapes     from '../mixtapes/Mixtapes-Module.vue'
+    import TitleBar     from '../misc/Title-Bar.vue'
+    import TitleBarNav  from '../misc/Title-Bar-Nav.vue'
 
     export default 
     {
         components:
         {
-            'mixtapes': Mixtapes,
-            'title-bar': TitleBar
+            'mixtapes':         Mixtapes,
+            'title-bar':        TitleBar,
+            'title-bar-nav':    TitleBarNav
         },
 
         data()
         {
             return {
+
                 mixtapes:
                 [
                     { src: 'https://s3.amazonaws.com/ears2thestreets/mixtape-1.png',      title: 'Puke Blue Devil',               user: '@Bezells' },
@@ -54,7 +61,15 @@
                     { src: 'https://s3.amazonaws.com/ears2thestreets/mixtape-10.png',     title: 'Slow Motion 2',                 user: '@Jarren Benton' },
                     { src: 'https://s3.amazonaws.com/ears2thestreets/mixtape-11.png',     title: 'E.A.R.T.H',                     user: '@B.O.B' },
                     { src: 'https://s3.amazonaws.com/ears2thestreets/mixtape-12.png',     title: 'Left Of A Dreamer',             user: '@Sean Brown' }
+                ],
+
+                title_bar_links:
+                [
+                    { title: 'Latest',      href: '#' },
+                    { title: 'Popular',     href: '#' },
+                    { title: 'Top 100',     href: '#' }
                 ]
+
             }
         }
     }

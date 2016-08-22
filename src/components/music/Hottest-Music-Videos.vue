@@ -5,7 +5,11 @@
         <header class="Header">
 
             <title-bar top="The Hottest" bottom="Music Videos">
+
+                <title-bar-nav :links="title_bar_links"></title-bar-nav>
+
                 <small>more <span class="icon-arrow-right2"></span></small>
+
             </title-bar>
 
         </header>
@@ -27,14 +31,16 @@
 <script>
 
     import MusicVideos  from './Music-Videos-Module.vue'
-    import TitleBar from '../misc/Title-Bar.vue'
+    import TitleBar     from '../misc/Title-Bar.vue'
+    import TitleBarNav  from '../misc/Title-Bar-Nav.vue'
 
     export default 
     {
         components:
         {
-            'music-videos': MusicVideos,
-            'title-bar': TitleBar
+            'music-videos':     MusicVideos,
+            'title-bar':        TitleBar,
+            'title-bar-nav':    TitleBarNav
         },
 
         data()
@@ -52,6 +58,12 @@
                     { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-10.png',     title: 'Breath',                      user: '@Token',     views: 200000 },
                     { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-11.png',     title: 'Waist Down',                  user: '@Token',     views: 200000 },
                     { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-12.png',     title: 'Party On The East Coast',     user: '@Token',     views: 200000 }
+                ],
+
+                title_bar_links:
+                [
+                    { title: 'Latest',      href: '#' },
+                    { title: 'Popular',     href: '#' }
                 ]
                 
             }
