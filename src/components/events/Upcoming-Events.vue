@@ -14,6 +14,10 @@
 
         </div>
 
+        <div class="More_Events">
+            <button class="Button">More Events</button>
+        </div
+
     </div>
 
 </template>
@@ -64,5 +68,22 @@
         background-color $WHITE
         border-radius 6px
         padding 20px
+
+    .Upcoming_Events .Title_Bar small
+        display none
+
+    .Upcoming_Events .More_Events
+        margin-top 15px
+
+    .Upcoming_Events .More_Events button
+        width 100%
+
+    @media (min-width 544px)
+
+        .Upcoming_Events .Title_Bar small
+            display block
+        
+        .Upcoming_Events .More_Events
+            display none
 
 </style>

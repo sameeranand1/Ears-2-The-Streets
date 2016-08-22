@@ -36,9 +36,9 @@
 
                 music_videos:
                 [
-                    { src: '',      title: 'Breath',                      user: '@Token',     views: 200000 },
-                    { src: '',      title: 'Waist Down',                  user: '@Token',     views: 200000 },
-                    { src: '',      title: 'Party On The East Coast',     user: '@Token',     views: 200000 }
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-1.png',      title: 'Breath',                      user: '@Token',     views: 200000 },
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-2.png',      title: 'Waist Down',                  user: '@Token',     views: 200000 },
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-3.png',      title: 'Party On The East Coast',     user: '@Token',     views: 200000 }
                 ]
 
             }

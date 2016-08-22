@@ -2,13 +2,13 @@
 
     <div class="Featured_Music_Videos">
 
-        <div class="Music_Video" v-for="musicVideo in featuredMusicVideos">
+        <div class="Music_Video" v-for="music_video in music_videos" :style="{ 'background-image': 'url(' + music_video.src + ')' }">
 
             <div class="Wrapper">
 
                 <div class="Player_Wrapper">
 
-                    <music-video-player :video="musicVideo.video"></music-video-player>
+                    <music-video-player :video="music_video.video"></music-video-player>
 
                 </div>
 
@@ -16,9 +16,9 @@
 
             <div class="Data">
 
-                <h4 class="Name">{{ musicVideo.name }}</h4>
+                <h4 class="Name">{{ music_video.name }}</h4>
 
-                <h5 class="Authors">{{ musicVideo.authors }}</h5>
+                <h5 class="Authors">{{ music_video.authors }}</h5>
 
             </div>
 
@@ -42,12 +42,14 @@
         data()
         {
             return {
-                featuredMusicVideos:
+
+                music_videos:
                 [
-                    { name: 'Crossroad',            authors: 'Nicki Minaj Feat. Young Jeezy and eminem',    video: '' },
-                    { name: 'California Love',      authors: 'Tupac',                                       video: '' },
-                    { name: 'No Shopping',          authors: 'Drake Featuring Blacks Gambino',              video: '' }
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/featured-music-video-1.png',  name: 'Crossroad',            authors: 'Nicki Minaj Feat. Young Jeezy and eminem',    video: '' },
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/featured-music-video-2.png',  name: 'California Love',      authors: 'Tupac',                                       video: '' },
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/featured-music-video-3.png',  name: 'No Shopping',          authors: 'Drake Featuring Blacks Gambino',              video: '' }
                 ]
+                
             }
         }
     }
@@ -65,6 +67,8 @@
     .Featured_Music_Videos .Music_Video
         align-items center
         background-color $BRAND_LIGHT_BLUE
+        background-position top center
+        background-size cover
         display flex
         height 275px
         justify-content center

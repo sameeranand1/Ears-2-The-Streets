@@ -4,7 +4,7 @@
 
         <div class="Music_Video" v-for="music_video in music_videos">
 
-            <div class="Cover_Image">
+            <div class="Cover_Image" :style="{ 'background-image': 'url(' + music_video.src + ')' }">
 
                 <div class="Logo">
                     <img src="../../assets/images/logo-brand.svg" alt="Logo">
@@ -60,7 +60,7 @@
 
     .Music_Videos .Music_Video .Cover_Image
         background-color #222329
-        background-position center
+        background-position top center
         background-repeat no-repeat
         background-size cover
         height 175px

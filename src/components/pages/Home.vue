@@ -19,7 +19,7 @@
             <div class="Column--right">
 
                 <div class="Module"><exclusive-mixtape></exclusive-mixtape></div>
-                <div class="Module"></div>
+                <div class="Module"><featured-event></featured-event></div>
                 <div class="Module"><trending-mixtapes></trending-mixtapes></div>
                 <div class="Module"><community-poll></community-poll></div>
                 <div class="Module"><trending-artists></trending-artists></div>
@@ -38,6 +38,7 @@
     import DopeMixtapes             from '../mixtapes/Dope-Mixtapes.vue'
     import ExclusiveMixtape         from '../mixtapes/Exclusive-Mixtape.vue'
     import ExclusiveMusicVideos     from '../music/Exclusive-Music-Videos.vue'
+    import FeaturedEvent            from '../events/Featured-Event.vue'
     import FeaturedMixtapes         from '../mixtapes/Featured-Mixtapes.vue'
     import FeaturedMusicVideos      from '../music/Featured-Music-Videos.vue'
     import HottestMusicVideos       from '../music/Hottest-Music-Videos.vue'
@@ -53,6 +54,7 @@
             'dope-mixtapes':            DopeMixtapes,
             'exclusive-mixtape':        ExclusiveMixtape,
             'exclusive-music-videos':   ExclusiveMusicVideos,
+            'featured-event':           FeaturedEvent,
             'featured-mixtapes':        FeaturedMixtapes,
             'featured-music-videos':    FeaturedMusicVideos,
             'hottest-music-videos':     HottestMusicVideos,
@@ -89,7 +91,6 @@
 
     .Home .Module
         lost-waffle 1 1 20px flex
-        min-height 300px
         position relative
 
     @media (min-width 768px)

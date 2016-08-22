@@ -10,6 +10,10 @@
 
         </header>
 
+        <div class="Subtitle">
+            <p>Watch all the latest hip hop music videos, interviews and event footage. New videos are going up every day!</p>
+        </div>
+
         <music-videos :music_videos="music_videos"></music-videos>
 
         <div class="More_Music_Videos">
@@ -39,15 +43,15 @@
 
                 music_videos:
                 [
-                    { src: '',      title: 'Breath',                      user: '@Token',     views: 200000 },
-                    { src: '',      title: 'Waist Down',                  user: '@Token',     views: 200000 },
-                    { src: '',      title: 'Party On The East Coast',     user: '@Token',     views: 200000 },
-                    { src: '',      title: 'Breath',                      user: '@Token',     views: 200000 },
-                    { src: '',      title: 'Waist Down',                  user: '@Token',     views: 200000 },
-                    { src: '',      title: 'Party On The East Coast',     user: '@Token',     views: 200000 },
-                    { src: '',      title: 'Breath',                      user: '@Token',     views: 200000 },
-                    { src: '',      title: 'Waist Down',                  user: '@Token',     views: 200000 },
-                    { src: '',      title: 'Party On The East Coast',     user: '@Token',     views: 200000 }
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-4.png',      title: 'Breath',                      user: '@Token',     views: 200000 },
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-5.png',      title: 'Waist Down',                  user: '@Token',     views: 200000 },
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-6.png',      title: 'Party On The East Coast',     user: '@Token',     views: 200000 },
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-7.png',      title: 'Breath',                      user: '@Token',     views: 200000 },
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-8.png',      title: 'Waist Down',                  user: '@Token',     views: 200000 },
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-9.png',      title: 'Party On The East Coast',     user: '@Token',     views: 200000 },
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-10.png',     title: 'Breath',                      user: '@Token',     views: 200000 },
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-11.png',     title: 'Waist Down',                  user: '@Token',     views: 200000 },
+                    { src: 'https://s3.amazonaws.com/ears2thestreets/music-video-12.png',     title: 'Party On The East Coast',     user: '@Token',     views: 200000 }
                 ]
                 
             }
@@ -67,6 +71,17 @@
 
     .Hottest_Music_Videos .Title_Bar small
         display none
+
+    .Hottest_Music_Videos .Subtitle
+        margin 20px 0 22px 0
+
+    .Hottest_Music_Videos .Subtitle p
+        color #898C9A
+        font-family inherit
+        font-size 14px
+        font-weight 300
+        line-height 1.4
+        text-align justify
 
     .Hottest_Music_Videos .More_Music_Videos
         margin-top 15px
