@@ -114,6 +114,9 @@
         font-size 14px
         font-weight 500
 
+    .Featured_Mixtapes .Mixtapes .Mixtape .Actions
+        margin-bottom 20px
+
     .Featured_Mixtapes .Mixtapes .Mixtape .Actions ul
         margin 0
         padding 0
