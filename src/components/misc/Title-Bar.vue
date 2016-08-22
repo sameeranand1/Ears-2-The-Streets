@@ -59,6 +59,54 @@
         color $BRAND_BLUE
         cursor pointer
 
+    .Title_Bar[_s-00000] .Title_Bar_Tabs
+        display none
+        margin-left 29px
+        position relative
+
+    .Title_Bar[_s-00000] .Title_Bar_Tabs li
+        display inline-block
+        height 100%
+        list-style-type none
+        margin 0 40px 0 0
+        position relative
+
+    .Title_Bar[_s-00000] .Title_Bar_Tabs li:last-child
+        margin 0
+
+    .Title_Bar[_s-00000] .Title_Bar_Tabs li
+        color #898C9A
+        cursor pointer
+        font-family inherit
+        font-size 14px
+        font-weight bold
+        text-decoration none
+        text-transform uppercase
+
+    .Title_Bar[_s-00000] .Title_Bar_Tabs li::after
+        content ''
+        border-bottom 3px solid transparent
+        bottom -9px
+        left 0
+        position absolute
+        right 0
+        transition border-color .15s ease-in-out
+        width 100%
+        z-index 1000
+
+    .Title_Bar[_s-00000] .Title_Bar_Tabs li:hover::after,
+    .Title_Bar[_s-00000] .Title_Bar_Tabs li.active::after
+        border-color $BRAND_YELLOW
+
+    .Title_Bar[_s-00000] .Title_Bar_Tabs li:hover,
+    .Title_Bar[_s-00000] .Title_Bar_Tabs li.active
+        color $BRAND_LIGHT_BLUE
+
+    @media (min-width 992px)
+
+        .Title_Bar[_s-00000] .Title_Bar_Tabs
+            display block
+
 </style>
 
 <style lang="stylus" scoped>
