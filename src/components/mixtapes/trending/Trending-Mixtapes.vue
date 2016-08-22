@@ -149,6 +149,7 @@
     .Trending_Mixtapes .Header .Header_Tabs li a
         color #A3A5B0
         cursor pointer
+        display inline-block
         font-family inherit
         font-size 13px
         font-weight bold
@@ -158,7 +159,7 @@
     .Trending_Mixtapes .Header .Header_Tabs li + li::before
         color #A3A5B0
         content ' | '
-        padding 0 9px
+        padding 0 10px
 
     .Trending_Mixtapes .Header .Header_Tabs li.active a
         color $BRAND_LIGHT_BLUE
