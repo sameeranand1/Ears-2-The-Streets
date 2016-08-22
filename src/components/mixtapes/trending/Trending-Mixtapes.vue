@@ -8,9 +8,9 @@
 
             <div class="Header_Tabs">
 
-                <li :class="{ active: tabs.today }" @click="today()">Today</li>
-                <li :class="{ active: tabs.week }" @click="week()">This Week</li>
-                <li :class="{ active: tabs.month }" @click="month()">This Month</li>
+                <li :class="{ active: tabs.today }"><a @click="today()">Today</a></li>
+                <li :class="{ active: tabs.week }"><a @click="week()">This Week</a></li>
+                <li :class="{ active: tabs.month }"><a @click="month()">This Month</a></li>
 
             </div>
 
@@ -143,13 +143,16 @@
         justify-content center
 
     .Trending_Mixtapes .Header .Header_Tabs li
+        display inline-block
+        list-style-type none
+
+    .Trending_Mixtapes .Header .Header_Tabs li a
         color #A3A5B0
         cursor pointer
-        display inline-block
         font-family inherit
         font-size 13px
         font-weight bold
-        list-style-type none
+        text-decoration none
         text-transform uppercase
 
     .Trending_Mixtapes .Header .Header_Tabs li + li::before
@@ -157,7 +160,7 @@
         content ' | '
         padding 0 10px
 
-    .Trending_Mixtapes .Header .Header_Tabs li.active
+    .Trending_Mixtapes .Header .Header_Tabs li.active a
         color $BRAND_LIGHT_BLUE
 
 </style>
