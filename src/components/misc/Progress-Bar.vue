@@ -1,12 +1,17 @@
 <template>
 
     <div class="Progress_Wrapper">
+
         <div class="Progress_Meter">
+
             <span style="width: {{ value }}%"></span>
+
         </div>
+
         <div class="Progress_Value">
             {{ value }}%
         </div>
+
     </div>
 
 </template>
@@ -46,7 +51,10 @@
         overflow hidden
 
     .Progress_Wrapper .Progress_Value
-        /** **/
+        color $BRAND_BLUE
+        font-family inherit
+        font-size 14px
+        font-weight bold
 
     @keyframes expand
         0%

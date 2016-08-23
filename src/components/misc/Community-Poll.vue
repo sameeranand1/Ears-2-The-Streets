@@ -51,7 +51,7 @@
 
 <script>
 
-    import ProgressBar from '../misc/Progress-Bar.vue'
+    import ProgressBar from './Progress-Bar.vue'
     import TitleBar from '../misc/Title-Bar.vue'
 
     export default 
