@@ -103,7 +103,7 @@
         width 100%
 
     .Artists .Artist .Info .Popularity .Popularity_Meter span
-        animation expand .2s linear
+        animation expand 1s linear
         background-color $BRAND_GREEN
         border-right 3px solid $WHITE
         display block
