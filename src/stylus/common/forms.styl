@@ -25,10 +25,21 @@ input[type=button],
     text-transform uppercase
     transition background-color .3s ease-out
 
+input[type=button]:disabled, 
+.Button:disabled
+    background-color #D9D9D9
+    color $WHITE
+    cursor not-allowed
+
 input[type=button]:hover, 
 .Button:hover
     cursor pointer
     background-color darken($BRAND_YELLOW, 25%)
+
+input[type=button]:hover:disabled, 
+.Button:hover:disabled
+    background-color darken(#D9D9D9, 1%)
+    cursor not-allowed
 
 .Button--dark
     background-color $BRAND_LIGHT_BLUE
@@ -39,4 +50,4 @@ input[type=button]:hover,
     background-color darken($BRAND_LIGHT_BLUE, 25%)
 
 input[type=button]::-moz-focus-inner
-    border 0 
+    border 0
