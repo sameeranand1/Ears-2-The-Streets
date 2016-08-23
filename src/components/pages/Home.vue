@@ -42,7 +42,7 @@
     import FeaturedMixtapes         from '../mixtapes/featured/Featured-Mixtapes.vue'
     import FeaturedMusicVideos      from '../music/Featured-Music-Videos.vue'
     import HottestMusicVideos       from '../music/Hottest-Music-Videos.vue'
-    import TrendingArtists          from '../artists/Trending-Artists.vue'
+    import TrendingArtists          from '../artists/trending/Trending-Artists.vue'
     import TrendingMixtapes         from '../mixtapes/trending/Trending-Mixtapes.vue'
     import UpcomingEvents           from '../events/Upcoming-Events.vue'
 
