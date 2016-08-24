@@ -1,13 +1,34 @@
 <template>
-    
-    <div class="Events Page">
 
-        <p>Events Page</p>
+    <div class="Page">
+
+        <h2>Events Page</h2>
 
     </div>
 
 </template>
 
 <script>
-    export default {}
+
+    export default
+    {
+
+    }
+
 </script>
+
+<style lang="stylus" scoped>
+
+    @require '../../stylus/common/colors'
+
+    .Page
+        align-items center
+        display flex
+        justify-content center
+
+    .Page h2
+        color $BRAND_BLUE
+        font-size 15px
+        text-transform uppercase
+
+</style>

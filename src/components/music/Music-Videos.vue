@@ -1,13 +1,34 @@
 <template>
 
-    <div class="Music_Videos Page">
+    <div class="Page">
 
-        <p>Music Videos Page</p>
+        <h2>Music Videos Page</h2>
 
     </div>
 
 </template>
 
 <script>
-    export default {}
+
+    export default
+    {
+
+    }
+
 </script>
+
+<style lang="stylus" scoped>
+
+    @require '../../stylus/common/colors'
+
+    .Page
+        align-items center
+        display flex
+        justify-content center
+
+    .Page h2
+        color $BRAND_BLUE
+        font-size 15px
+        text-transform uppercase
+
+</style>

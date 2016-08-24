@@ -83,10 +83,10 @@
                 ],
                 rightNavigationLinks:
                 [
-                    { path: '#',    name: 'Policy',             class: '' },
-                    { path: '#',    name: 'Users Agreement',    class: '' },
-                    { path: '#',    name: 'TOS',                class: '' },
-                    { path: '#',    name: 'DMCA',               class: '' }
+                    { path: '/privacy-policy',      name: 'Policy',             class: '' },
+                    { path: '/users-agreement',     name: 'Users Agreement',    class: '' },
+                    { path: '/terms-of-service',    name: 'TOS',                class: '' },
+                    { path: '/dmca',                name: 'DMCA',               class: '' }
                 ]
             }
         }

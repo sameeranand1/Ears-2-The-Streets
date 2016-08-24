@@ -73,9 +73,9 @@
                 ],
                 rightNavigationLinks:
                 [
-                    { path: '#',    name: 'Promote',    class: '--brand-yellow' },
-                    { path: '#',    name: 'Upload',     class: '' },
-                    { path: '#',    name: 'Login',      class: '' }
+                    { path: '#',                name: 'Promote',    class: '--brand-yellow' },
+                    { path: '/login',           name: 'Login',      class: '' },
+                    { path: '/register',        name: 'Register',   class: '' }
                 ],
                 showMobileNav: false
             }
@@ -278,7 +278,8 @@
             border-bottom-color $BRAND_YELLOW
             color $WHITE
 
-        .Site_Header .Navigation--left nav li a.v-link-active
+        .Site_Header .Navigation--left nav li a.v-link-active,
+        .Site_Header .Navigation--right nav li a.v-link-active
             border-bottom-color $BRAND_YELLOW
             color $WHITE
 

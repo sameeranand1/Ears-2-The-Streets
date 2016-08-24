@@ -4,7 +4,7 @@
 
         <div class="Container">
 
-            <input v-bind:class="{ 'magnifer': !query }"  class="Input Search_Bar" type="text" v-model="query" @keyup="search" placeholder="search artists, mixtapes, music videos and more">
+            <input v-bind:class="{ 'magnifer': !query }"  class="Input--dark Search_Bar" type="text" v-model="query" @keyup="search" placeholder="search artists, mixtapes, music videos and more">
 
             <span class="icon-x" v-show="query" v-on:click="clear"></span>
 

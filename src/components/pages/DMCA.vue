@@ -2,7 +2,7 @@
 
     <div class="Page">
 
-        <h2>Specific Artist Page</h2>
+        <h2>DMCA Page</h2>
 
     </div>
 

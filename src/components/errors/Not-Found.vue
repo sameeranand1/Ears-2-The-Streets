@@ -1,19 +1,34 @@
 <template>
-    
-    <div class="404 Page">
 
-        <p>404 Not Found</p>
+    <div class="Page">
+
+        <h2>404 Not Found Page</h2>
 
     </div>
 
 </template>
 
 <script>
+
     export default
     {
-        ready()
-        {
-            console.log('404 Not Found')
-        }
+
     }
+
 </script>
+
+<style lang="stylus" scoped>
+
+    @require '../../stylus/common/colors'
+
+    .Page
+        align-items center
+        display flex
+        justify-content center
+
+    .Page h2
+        color $BRAND_BLUE
+        font-size 15px
+        text-transform uppercase
+
+</style>

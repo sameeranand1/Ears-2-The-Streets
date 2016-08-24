@@ -2,7 +2,7 @@
 
     <div class="Page">
 
-        <h2>Specific Artist Page</h2>
+        <h2>Privacy Policy Page</h2>
 
     </div>
 

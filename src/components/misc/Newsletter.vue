@@ -12,8 +12,8 @@
 
                 <form v-on:submit.prevent="subscribe" v-show="!subscribed" transition="expand">
 
-                    <input class="Input" type="text" v-model="name" placeholder="Full name">
-                    <input class="Input" type="text" v-model="email" placeholder="E-mail Address">
+                    <input class="Input--dark" type="text" v-model="name" placeholder="Full name">
+                    <input class="Input--dark" type="text" v-model="email" placeholder="E-mail Address">
                     <button class="Button" type="submit">Subscribe</button>
 
                 </form>
@@ -89,7 +89,7 @@
         opacity 0
         height 0
 
-    .Newsletter .Form .Input
+    .Newsletter .Form .Input--dark
         display block
         margin 0 0 10px
         width 100%
@@ -97,11 +97,11 @@
     .Newsletter .Form .Button
         width 100%
 
-    .Newsletter .Form .Input::placeholder
+    .Newsletter .Form .Input--dark::placeholder
         opacity .4 !important
         transition opacity .3s ease
 
-    .Newsletter .Form .Input:focus::placeholder
+    .Newsletter .Form .Input--dark:focus::placeholder
         opacity .6 !important
 
     .Newsletter .Form h4
@@ -129,7 +129,7 @@
         .Newsletter .Form
             lost-column none
 
-        .Newsletter .Form .Input
+        .Newsletter .Form .Input--dark
             display inline-block
             margin 0 5px 0 0
             width 170px
