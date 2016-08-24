@@ -290,7 +290,7 @@
     @require '../../stylus/common/colors'
 
     .Page
-        background url('../../assets/images/Register-background.jpg')
+        background url('../../assets/images/register-background.jpg')
         background-position top center
         background-size cover
 
