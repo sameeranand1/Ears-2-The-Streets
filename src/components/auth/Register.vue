@@ -10,7 +10,7 @@
 
                     <title-bar top="Yo Just" bottom="Create Account">
 
-                        <small>Login</small>
+                        <small v-link="{ path: '/login' }">Login</small>
                         <small v-link="{ path: '/login' }">Nah, Login</small>
 
                     </title-bar>
@@ -343,6 +343,7 @@
         height 20px
         margin-right 20px
         width 20px
+        visibility hidden
 
     .Register .Register_Form .Input_Group.Terms label
         color $BRAND_LIGHT_BLUE
@@ -379,7 +380,6 @@
         box-sizing border-box
         height 20px
         left -38px
-        top 14px
         width 20px
 
     .Register .Register_Form .Input_Group.Terms input:checked + label span.checkbox::before
@@ -390,9 +390,7 @@
         color #50C71B
         font-family 'icomoon'
         font-size 20px
-        height 20px
         left -34px
-        top 10px
         width 20px
 
     .Register .Register_Form .Input_Group .Errors

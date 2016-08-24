@@ -10,7 +10,7 @@
 
                     <title-bar top="C'Mon" bottom="Login Already">
 
-                        <small>Register</small>
+                        <small v-link="{ path: '/register' }">Register</small>
                         <small v-link="{ path: '/register' }">Create Account</small>
 
                     </title-bar>
